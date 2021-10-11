@@ -11,6 +11,6 @@
 
 from datetime import date
 def solution(a, b):
-    weekday_dict = {0 : 'MON', 1 : 'TUE', 2 : 'WED', 3 : 'THU', 4 : 'FRI', 5 : 'SAT'}
+    weekday_dict = {0 : 'MON', 1 : 'TUE', 2 : 'WED', 3 : 'THU', 4 : 'FRI', 5 : 'SAT', 6: 'SUN'} # 일요일이 빠져 있어 추가
     answer = weekday_dict[date(2016, a, b).weekday()]
     return answer
