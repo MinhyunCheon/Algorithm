@@ -6,7 +6,7 @@ s는 길이가 1 이상, 100이하인 스트링입니다.
   
   
   
-  class Solution {
+class Solution {
   public String solution(String s) {
       String answer = "";
       int len = s.length();
