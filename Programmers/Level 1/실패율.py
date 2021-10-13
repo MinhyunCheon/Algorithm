@@ -54,10 +54,8 @@ def solution(N, stages):
         temp = stage_clear_dict[x + 1]
         # temp[1]이 0인 경우 런타임 에러 발생(1, 6, 7, 9, 13, 23, 24, 25), 삼항 연산자를 통해 우회
         # 위 에러를 우회한 경우 실패 다수 발생(1, 6, 7, 9, 13, 23, 24)
-        # 해당 문제의 경우 제한사항의 설명이 부족
-        # 스테이지에 도달한 유저가 없는 경우 해당 스테이지의 실패율은 0 으로 정의한다.
-        # 위 내용대로만 구현하면 도달한 유저가 없는 스테이지에 대한 정렬이 테스트 케이스와 부합하지 않아 실패가 발생
-        failure_rate_dict[x + 1] = (temp[1] - temp[0]) / temp[1] if temp[1] != 0 else -1
+        # 실패율이 아닌 성공률을 기준으로 역정렬해 도달한 유저가 없는 스테이지에 대한 값 정렬에 실패
+        failure_rate_dict[x + 1] = (temp[1] - temp[0]) / temp[1] if temp[1] != 0 else 0
 
     # 최종 정제된 데이터를 조건에 맞게 정렬
     for x in sorted(failure_rate_dict.items(), key = lambda x : (-x[1], x[0])): answer.append(x[0])
