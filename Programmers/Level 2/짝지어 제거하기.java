@@ -28,7 +28,7 @@ class Solution
         int sLen = s.length();
         
         for(int idx = 0; idx < sLen; idx++) {
-            if(!stack.empty() && stack.peek() == s.charAt(idx)) stack.push(s.charAt(idx));
+            if(!stack.empty() && stack.peek() == s.charAt(idx)) stack.pop();
             else stack.push(s.charAt(idx));
         }
         
